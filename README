@@ -5,3 +5,4 @@ Run ,
 rake db:seed
 
 Demo:
+http://depot-demo.heroku.com/
