@@ -48,7 +48,7 @@ Product.create(:title => "Beer",
 	 :description => 
 	 %{<p>
 	 	It might seem an unlikely claim when you're trying to choose from the bewildering
-	 	array of beers available today but it’s true. All beer falls into one of these two categories -
+	 	array of beers available today but it is true. All beer falls into one of these two categories -
 	 	Ale or Lager. There are a few so-called hybrid styles that employ traditional brewing methods of 
 		both but even these can be clearly distinguished as ale or lager based on the yeast used to ferment them.},
 	 :image_url => '/images/beer.jpg',
