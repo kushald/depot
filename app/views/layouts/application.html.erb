@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>storehouse for food items</title>
+	<%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
   <%= stylesheet_link_tag "scaffold" %>
   <%= stylesheet_link_tag "depot", :media => :all %>
   <%= javascript_include_tag :defaults %>
@@ -18,9 +20,12 @@
 		<a href="http://depot-demo.heroku.com">News</a><br />
 		<a href="http://depot-demo.heroku.com">contact</a><br />
 		</div>
- <div id="main">
-	 <%= yield %>
+<div id="main">
+ <div data-pjax-container>	
+ <%= yield %>
+
  </div>
+</div>
 </div>
 </body>
 </html>
