@@ -7,6 +7,17 @@ class Product < ActiveRecord::Base
 	validates :image_url, :format => { :with => %r{\.(gif|jpg|png)$}}
 	validates :price , :numericality => { :greater_than_or_equal_to => 0.01 }
 	
+
+	def self.search(search)
+		if search[:product] || search[:search]
+		conditions = "1=1 "
+		conditions << "and id =#{search[:product][:id]} " unless search[:product][:id].blank?
+		conditions << "and description LIKE '%#{search[:search]}%' or price LIKE '%#{search[:search]}%'" unless search[:search].blank?
+			find(:all, :conditions => conditions)
+		else
+    	find(:all)
+  	end
+end
 	private
 	
 	def ensure_not_referenced_by_any_line_item

@@ -1,6 +1,6 @@
 class StoreController < ApplicationController
   def index
-  	@products = Product.all
+  	@products = Product.search(params)
   end
 
 end
