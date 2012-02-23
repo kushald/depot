@@ -12,7 +12,7 @@ class Product < ActiveRecord::Base
 		if search[:product] || search[:search]
 		conditions = "1=1 "
 		conditions << "and id =#{search[:product][:id]} " unless search[:product][:id].blank?
-		conditions << "and description LIKE '%#{search[:search]}%' or price=#{search[:search]}" unless search[:search].blank?
+		conditions << "and description LIKE '%#{search[:search]}%' or price=#{search[:search].to_f}" unless search[:search].blank?
 			find(:all, :conditions => conditions)
 		else
     	find(:all)
