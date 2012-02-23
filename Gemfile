@@ -11,6 +11,10 @@ gem 'coffee-script'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'pjax_rails'
+group :production do
+  # gems specifically for Heroku go here
+  gem "pg"
+end
 # Use unicorn as the web server
 # gem 'unicorn'
 
