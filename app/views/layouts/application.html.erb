@@ -31,11 +31,11 @@
  </div>
 
 <div class="top-search">
-<%= form_tag store_path, :method => 'get' do %>
-  <p>
-		<%= autocomplete_field_tag 'search', '', autocomplete_product_title_products_path, :size => 25, :value => params[:search] %>
+<%= form_tag store_path, :method => 'get', :id => "search" do %>
+  
+		<%= autocomplete_field_tag 'search', '', autocomplete_product_title_products_path, :size => 25, :placeholder => "Search", :value => params[:search] %>
     <%= submit_tag "Search", :name => nil %>
-  </p>
+  
 <% end %>
 </div>
 
@@ -55,7 +55,7 @@
 					<ul>
 
 
-						<li><a href="http://depot-demo.heroku.com">home</a></li>
+						<li><a href="http://depot-demo.heroku.com">Home</a></li>
                         <li><%= link_to("Products", products_path) %></li>
                         <li><a href="#">News</a></li>
                         <li><a href="#">Contact</a></li>
