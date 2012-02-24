@@ -226,4 +226,10 @@
 .depot_form div {
   margin: 0.5em 0;
 }
+.top-search {
+position: absolute;
+top: 47px;
+right: 30px;
+}
+
 /* END:form */

@@ -4,29 +4,80 @@
   <title>storehouse for food items</title>
 	<%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
-  <%= stylesheet_link_tag "scaffold" %>
-  <%= stylesheet_link_tag "depot", :media => :all %>
+  <%#= stylesheet_link_tag "scaffold" %>
+  <%= stylesheet_link_tag "style", :media => :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
-<body id="store">
-	<div id="banner">
-	<%= @page_title || "storehouse"%>
-	</div>
-	<div id="columns">
-		<div id="side">
-		<a href="http://depot-demo.heroku.com">Home</a><br />
-		<a href="http://depot-demo.heroku.com">Questions</a><br />
-		<a href="http://depot-demo.heroku.com">News</a><br />
-		<a href="http://depot-demo.heroku.com">contact</a><br />
-		<a href="http://depot-demo.heroku.com">about us</a><br />
-		</div>
-<div id="main">
+<body>
+<div id="page">
+<header>
+	<%= image_tag("logo.jpg", :width => "303", :height => "112", :alt => "Food Shop") %>
+	
+      <br />
+	<%= image_tag("bg_banner_grey.gif", :width => "980", :height => "5", :alt => "banner") %>
+
+      </header>
+
+
+  <div id="content">
+
+		  <div class="post">
  <div data-pjax-container>	
  <%= yield %>
 
  </div>
+
+<div class="top-search">
+<%= form_tag store_path, :method => 'get' do %>
+  <p>
+		<%= collection_select(:product, :id, Product.all, :id, :title, {:include_blank => true, :selected => (params[:product].nil? ? "" : params[:product][:id] ) }) %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
 </div>
+
+    </div>
+<div id="left">
+
+			</div>
+<div id="right">
+		</div>
+
+  </div>
+  <div id="sidebar">
+
+	<ul>
+
+    <li>
+					<ul>
+
+
+						<li><a href="http://depot-demo.heroku.com">home</a></li>
+                        <li><a href="#">Questions</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">About us</a></li>
+                        
+					</ul>
+	  </li>
+
+    </ul>
+    <br />
+     
+
+  </div>
+
+  <div style="clear: both;">&nbsp;</div>
+	<%= image_tag("bg_banner_grey.gif", :width => "980", :height => "5", :alt => "banner") %>
+<footer>
+ Depot Demo 
+				© 2012
+</footer>
+</div>
+
+
 </div>
 </body>
 </html>

@@ -1,18 +1,11 @@
 <% if notice%>
 <P id="notice"><%= notice %></p>
 <% end %>
-<%= form_tag store_path, :method => 'get' do %>
-  <p>
-		<%= collection_select(:product, :id, Product.all, :id, :title, {:include_blank => true, :selected => (params[:product].nil? ? "" : params[:product][:id] ) }) %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
 
 <h1> Catalog </h1>
 <% @products.each do |product| %>
 	<div class="entry">
-		<%= image_tag(product.image_url) %>
+		<%= image_tag(product.image_url, :size => "90x90") %>
 		<h3><%= product.title %></h3>
 		<%= sanitize(product.description) %>
 		<div class="price_line">
