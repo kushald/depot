@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+	before_filter :cart_setting
   
   private
   
@@ -10,4 +11,8 @@ class ApplicationController < ActionController::Base
    		session[:cart_id] = cart.id
    		cart
    end
+
+	def cart_setting
+		@cart = current_cart
+	end
 end

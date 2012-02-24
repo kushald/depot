@@ -250,8 +250,7 @@ right: 130px;
 /* Styles for the cart in the sidebar */
 
 #cart, #cart table {
-  font-size: smaller;
-  color:     white;
+  color:     #44A;
 }
 
 #cart table {
