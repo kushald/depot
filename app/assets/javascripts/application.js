@@ -5,3 +5,4 @@
 //= require jquery_ujs
 //= require_tree .
 //= require pjax
+//= require autocomplete-rails

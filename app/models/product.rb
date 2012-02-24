@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+
+
 	default_scope :order => 'title'
 	has_many :line_items
 	before_destroy :ensure_not_referenced_by_any_line_item
@@ -9,11 +11,8 @@ class Product < ActiveRecord::Base
 	
 
 	def self.search(search)
-		if search[:product] || search[:search]
-		conditions = "1=1 "
-		conditions << "and id =#{search[:product][:id]} " unless search[:product][:id].blank?
-		conditions << "and description LIKE '%#{search[:search]}%' or price=#{search[:search].to_f}" unless search[:search].blank?
-			find(:all, :conditions => conditions)
+		if search
+			find(:all, :conditions => ["title LIKE ?", search])
 		else
     	find(:all)
   	end

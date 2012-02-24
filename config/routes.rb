@@ -3,8 +3,10 @@ Depot::Application.routes.draw do
 
   resources :carts
 
-  resources :products
-
+#  resources :products
+resources :products do
+  get :autocomplete_product_title, :on => :collection
+end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

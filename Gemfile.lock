@@ -76,6 +76,8 @@ GEM
       activesupport (= 3.1.1)
       bundler (~> 1.0)
       railties (= 3.1.1)
+    rails3-jquery-autocomplete (1.0.6)
+      rails (~> 3.0)
     railties (3.1.1)
       actionpack (= 3.1.1)
       activesupport (= 3.1.1)
@@ -123,6 +125,7 @@ DEPENDENCIES
   pg
   pjax_rails
   rails (= 3.1.1)
+  rails3-jquery-autocomplete
   ruby-debug19
   sass
   sqlite3

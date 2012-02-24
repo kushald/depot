@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+
+  autocomplete :product, :title
   # GET /products
   # GET /products.xml
   def index
