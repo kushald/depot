@@ -12,7 +12,7 @@
 <body>
 <div id="page">
 <header>
-	<%= image_tag("logo.jpg", :width => "303", :height => "112", :alt => "Food Shop") %>
+	<%= link_to(image_tag("logo.jpg", :width => "303", :height => "112", :alt => "Food Shop"), "http://depot-demo.heroku.com") %>
 	
       <br />
 	<%= image_tag("bg_banner_grey.gif", :width => "980", :height => "5", :alt => "banner") %>
@@ -55,7 +55,7 @@
 
 
 						<li><a href="http://depot-demo.heroku.com">home</a></li>
-                        <li><a href="#">Questions</a></li>
+                        <li><%= link_to("Products", products_path) %></li>
                         <li><a href="#">News</a></li>
                         <li><a href="#">Contact</a></li>
                         <li><a href="#">About us</a></li>
