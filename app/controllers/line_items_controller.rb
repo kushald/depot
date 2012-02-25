@@ -63,7 +63,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.update_attributes(params[:line_item])
-        format.html { redirect_to(@line_item, :notice => 'Line item was successfully updated.') }
+        format.html { render @cart}
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

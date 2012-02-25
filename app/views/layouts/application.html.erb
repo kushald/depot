@@ -82,5 +82,34 @@
 
 
 </div>
+
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+		$("#quantity_quantity").live("blur", (function(){
+			var id = $(this).attr('num');
+			var value = $(this).val(); 
+			var v = {quantity : value}
+			$.ajax({
+								type : "POST",
+	              url: '/line_items/'+id,
+  							 data: { _method:'PUT', line_item : v},
+								 headers: {
+  												  'X-Transaction': 'POST Example',
+      											'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+  												},	
+								success: function(transport){
+                jQuery('#cart').html(transport);
+
+            }						
+														
+	 });
+			
+}));
+  }); //document.ready
+</script>
+
 </body>
 </html>
