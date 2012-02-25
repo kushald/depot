@@ -327,3 +327,9 @@ legend {
   font-family: sans-serif;
   padding: 0.2em 1em;
 }
+
+a.grey-button {
+	background-position: left -219px;
+	padding-top: 3px;
+	color: #fff !important;
+}
