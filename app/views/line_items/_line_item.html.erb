@@ -1,6 +1,7 @@
 	<tr>
-		<td><%= line_item.quantity %>&times;</td>
+		<td><%= text_field :quantity, :quantity, :value => line_item.quantity, :size => 5 %>&times;</td>
     <td><%= line_item.product.title %></td>
     &nbsp;&nbsp;<td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
+		<td><%= link_to "delete", line_item_path(line_item), :method => :delete, :remote => true %></td>
   </tr>
 
