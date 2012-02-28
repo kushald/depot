@@ -20,6 +20,11 @@
 	<%= image_tag("bg_banner_grey.gif", :width => "980", :height => "5", :alt => "banner") %>
 
       </header>
+Find Html elements in this page <div id="form">
+		<p>
+		<input type="text" name="text_field" value="" id="text_field" />
+		<input type="submit" value="Continue &rarr;" id="submit" /></p>
+</div>
 
 
   <div id="content">
@@ -38,6 +43,7 @@
   
 <% end %>
 </div>
+
 
     </div>
 <div id="left">
@@ -108,6 +114,14 @@
 	 });
 			
 }));
+
+$(function(){	
+		$('#submit').live("click",function(){
+			expression = $('#text_field').val();
+			$($('#text_field').val()).css("background","yellow"); 
+		});	
+	});
+
   }); //document.ready
 </script>
 
