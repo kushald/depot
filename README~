@@ -1,5 +1,6 @@
 Demo application from the book "Agile web development"
 
+
 Run ,
 rake db:seed
 
